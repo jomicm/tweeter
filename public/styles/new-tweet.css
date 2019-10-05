@@ -32,6 +32,10 @@
   margin-left: 10px;
 }
 
+.button-new-tweet:hover {
+  width: 110px;
+} 
+
 .label-counter {
   color:black;
   float: right;

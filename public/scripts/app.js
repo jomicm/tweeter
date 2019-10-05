@@ -3,11 +3,14 @@
 $(document).ready(function() {
   // Define jQuery elements once so it's more efficient
   const tweetContainer = $('#tweets-container');
-  const tweetInput = $('#txtIn');
+  const tweetInput = $('#input-new-tweet');
   const letterCounter = $('.counter');
   const toggleMenuButton = $('.no-link');
   const goToSkyButton = $('#go-to-sky');
   const newTweetForm = $('#post-new-tweet');
+  const error = $('#error');
+  const closeErrorButton = $('#close-error-button');
+  const errorMessage = $('#error-message');
 
   // Appends all tweets to parten element
   const renderTweets = tweets => {
@@ -23,9 +26,19 @@ $(document).ready(function() {
   // Overrides form submit method to prevent reloading the page
   newTweetForm.submit(e => {
     e.preventDefault();
+    console.log('e', e.currentTarget);
+    const tmpdata  = $(e.currentTarget).serializeArray();
+    console.log('tmpdata', tmpdata);
+    console.log('tmpdata', tmpdata.deserialize());
+
+    return;
     // Validates a correct tweet
     if (!validateNewTweet()) return;
+    error.fadeOut();
     const data  = $(e.currentTarget).serialize();
+
+    data.split('=')
+
     const actionURL = e.currentTarget.action;
     pushTweets(actionURL, data);
   });
@@ -54,7 +67,8 @@ $(document).ready(function() {
   // Toggle buttons to navigate to new tweet input
   toggleMenuButton.on('click', e => {
     if (!toggleNewTweet) {
-      $('html,body').animate({scrollTop: $('#compose-tweet').offset().top},'slow');
+      // $('html,body').animate({scrollTop: $('#compose-tweet').offset().top},'slow');
+      $('html,body').animate({scrollTop: 400},'slow');
       $('#arrow-toggle').addClass('rotated');
     } else {
       $('html,body').animate({scrollTop: $('html').offset().top},'slow');
@@ -84,16 +98,25 @@ $(document).ready(function() {
     }
   });
 
+  // Error section
+  closeErrorButton.on('click', () => {
+    error.fadeOut();
+  });
+  const launchError = message => {
+    errorMessage.text(message);
+    error.fadeIn();
+  };
+
   // Validators
   const validateNewTweet = () => {
     let validationError = '';
     if (!tweetInput.val().length) {
-      validationError = 'There is no message';
-    } else if ($('#txtIn').val().length > 140) {
-      validationError = 'Only 140 max length messages allowed';
+      validationError = 'Tweets cannot be empty!';
+    } else if (tweetInput.val().length > 140) {
+      validationError = 'Only 140 max length tweets allowed!';
     }
     if (validationError.length) {
-      alert(validationError);
+      launchError(validationError);
       return false;
     }
     return true;
@@ -107,7 +130,7 @@ let toggleNewTweet = false;
 const getElapsedTime = date => {
   const now = new Date();
   const diff = now.getTime() - (new Date(date)).getTime();
-  let seconds = diff / 1000;
+  let seconds = Math.ceil(diff / 1000);
   let timeMeasure = 'seconds';
   let time = seconds;
   if (seconds > 60 * 60 * 24 * 365) {

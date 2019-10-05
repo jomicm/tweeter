@@ -1,0 +1,29 @@
+#error {
+  display: none;
+  padding: 20px;
+  background-color: #ce4136; /* Red */
+  color: white;
+  margin-bottom: 15px;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+#close-error-button {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-error-button:hover {
+  color: black;
+}
+
+#error-message {
+  padding-left: 10px;
+}

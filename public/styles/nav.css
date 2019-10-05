@@ -21,6 +21,13 @@ nav {
   font-size: 40pt;
 }
 
+.toggle-menu-button {
+  display: flex; 
+  flex-direction:column; 
+  margin-left: auto; 
+  text-align: center
+}
+
 .add-new-tweet {
   display: flex; 
   align-items:center;
@@ -71,9 +78,4 @@ nav {
   font-size: 22pt;
   line-height: 50px;
   color: #fff;
-}
-
-.show {
-  display: flex;
-  opacity: 1.0;
 }

@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
   <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/errors.css" type="text/css" />
 
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -32,8 +33,8 @@
   <!-- Top nav bar (fixed) -->
   <nav class="fixed-top">
     <span class="logo">Tweeter</span>
-    <div class="" style="display: flex; flex-direction:column; margin-left: auto; text-align: center">
-      <a class="no-link" data-toggle="false" href=""><span class="add-new-tweet"><strong>Write&nbsp</strong> a new Tweet<img id="arrow-toggle" class="avatar" src="./images/down-arrow.gif"/></span></a>
+    <div class="toggle-menu-button">
+      <a class="no-link" data-toggle="false" href=""><span class="add-new-tweet"><strong>New&nbsp</strong>Tweet<img id="arrow-toggle" class="avatar" src="./images/down-arrow.gif"/></span></a>
     </div>
   </nav>
   <!-- Header to show user info -->
@@ -48,16 +49,25 @@
   </header>
   <!-- Page-specific (main) content here -->
   <main class="container">
+    <!-- Error Section -->
+    <div id="error">
+        <!-- <span id="close-error-button" onclick="this.parentElement.style.display='none';">&times;</span> -->
+        <span id="close-error-button">&times;</span>
+        <i class="fa fa-bomb"></i>
+        <span><strong>Error:</strong><span id="error-message">is the error message.</span></span>
+    </div>
+    <!-- New Tweet Section -->
     <section class="new-tweet">
       <h3 class="bungee">Compose Tweet</h3>
       <form id="post-new-tweet" action="/tweets" method="POST">
-        <textarea id="txtIn" class="input-tweet" name="text" placeholder="What are you humming about?" fixed></textarea>
+        <textarea id="input-new-tweet" class="input-tweet" name="text" placeholder="What are you humming about?" fixed></textarea>
         <footer>
           <input class="button-new-tweet bungee" type="submit" value="Tweet">
           <span class="counter label-counter bungee">140</span>
         </footer>
       </form>
     </section>
+    <!-- Tweet Containers -->
     <section id="tweets-container">
       <!-- <article class="tweet">
         <header>
@@ -81,11 +91,6 @@
     </section>
     <!-- Go to sky button -->
     <a id="go-to-sky"></a>
-    <!-- <a style="opacity: 0.5;"; href="">
-      <div id="go-to-sky" style="display: flex; align-items: center; text-align: center; position: fixed; bottom: 40px; right: 15px; background-color: red; width: 50px; height:50px; border-radius: 40px;">
-        <i style="color: #fff;text-shadow: 1px 1px 1px #ccc;font-size: 2.5em; padding: 0 0 5px 5px;" class="fa fa-angle-up"></i>
-      </div>
-    </a> -->
   </main>
 
 </body>
