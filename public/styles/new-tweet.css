@@ -1,0 +1,39 @@
+.new-tweet {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.input-tweet {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 4px solid black;
+  height: 45px;
+  padding-left: 10px;
+  outline: none;
+  resize: none;
+}
+
+.input-tweet::-webkit-input-placeholder {
+  color: black;
+  font-weight: bold;
+}
+
+.bungee {
+  font-family: Bungee;
+}
+
+.button-new-tweet {
+  color:white;
+  background-color: #4056A1;  
+  font-size: 18pt;
+  float: left;
+  margin-left: 10px;
+}
+
+.label-counter {
+  color:black;
+  float: right;
+  margin-right: 10px;
+}

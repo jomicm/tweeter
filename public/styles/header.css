@@ -1,0 +1,24 @@
+header.main-header {
+  margin-top:120px;
+  padding-top: 0; 
+  height: 400px;
+  width: 100%;
+  background-color: #eb9500;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.image {
+  padding-top: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+.white-text {
+  color: white;
+}
+.bold-text {
+  font-weight: bolder;
+}
