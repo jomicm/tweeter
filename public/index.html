@@ -19,6 +19,8 @@
 
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/app.js"></script>
@@ -31,8 +33,7 @@
   <nav class="fixed-top">
     <span class="logo">Tweeter</span>
     <div class="" style="display: flex; flex-direction:column; margin-left: auto; text-align: center">
-      <span><strong>Write</strong> a new Tweet<img style="magin-top:-50px" class="avatar" src="./images/down-arrow.gif"/></span>
-      
+      <a class="no-link" data-toggle="false" href=""><span class="add-new-tweet"><strong>Write&nbsp</strong> a new Tweet<img id="arrow-toggle" class="avatar" src="./images/down-arrow.gif"/></span></a>
     </div>
   </nav>
   <!-- Header to show user info -->
@@ -40,7 +41,7 @@
     <div class="center">
       <img class="image" src="/images/profile-hex.png">
     </div>
-    <br>
+    <br id="compose-tweet"/>
     <div class="center">
       <h2 class="white-text"><span class="bold-text">JO</span>MICM</h2>
     </div>
@@ -78,6 +79,13 @@
         </footer>
       </article> -->
     </section>
+    <!-- Go to sky button -->
+    <a id="go-to-sky"></a>
+    <!-- <a style="opacity: 0.5;"; href="">
+      <div id="go-to-sky" style="display: flex; align-items: center; text-align: center; position: fixed; bottom: 40px; right: 15px; background-color: red; width: 50px; height:50px; border-radius: 40px;">
+        <i style="color: #fff;text-shadow: 1px 1px 1px #ccc;font-size: 2.5em; padding: 0 0 5px 5px;" class="fa fa-angle-up"></i>
+      </div>
+    </a> -->
   </main>
 
 </body>
