@@ -42,6 +42,7 @@ html body {
   }
 
   header.main-header {
+    float: left;
     margin-top: 150px;
     width: 35%;
     margin-left: 50px;
