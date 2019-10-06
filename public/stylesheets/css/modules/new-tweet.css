@@ -25,28 +25,18 @@
   font-family: Bungee;
 }
 
-.button-new-tweet {
-  color: white;
-  background-color: #4056A1;
-  font-size: 18pt;
-  float: left;
-  margin-left: 10px;
-  border: 0;
-  box-shadow: none;
-  border-radius: 5px;
-}
-
-.button-new-tweet:hover {
-  width: 110px;
-}
-
 .label-counter {
   color: black;
   float: right;
   margin-right: 10px;
 }
 
-.glow-on-hover {
+.button-new-tweet {
+  color: white;
+  background-color: #4056A1;
+  font-size: 18pt;
+  float: left;
+  margin-left: 10px;
   background: #4056A1;
   cursor: pointer;
   position: relative;
@@ -54,7 +44,7 @@
   border-radius: 10px;
 }
 
-.glow-on-hover:before {
+.button-new-tweet:before {
   content: "";
   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
   position: absolute;
@@ -71,19 +61,19 @@
   border-radius: 10px;
 }
 
-.glow-on-hover:active {
+.button-new-tweet:active {
   color: #4056A1;
 }
 
-.glow-on-hover:active:after {
+.button-new-tweet:active:after {
   background: transparent;
 }
 
-.glow-on-hover:hover:before {
+.button-new-tweet:hover:before {
   opacity: 1;
 }
 
-.glow-on-hover:after {
+.button-new-tweet:after {
   z-index: -1;
   content: "";
   position: absolute;
@@ -95,7 +85,7 @@
   border-radius: 10px;
 }
 
-.glow-on-hover:focus {
+.button-new-tweet:focus {
   outline: 0;
 }
 
