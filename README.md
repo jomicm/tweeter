@@ -4,6 +4,20 @@ Tweeter is a simple, single-page Twitter clone.
 
 This repository use the following techonologies HTML, CSS, JS, jQuery and AJAX, Node and Express.
 
+## Examples
+
+#### Welcome to Tweets App!
+![Welcome](https://raw.githubusercontent.com/jomicm/tweeter/master/docs/responsive-wel.png)
+
+#### A responsive design!
+![Welcome](https://raw.githubusercontent.com/jomicm/tweeter/master/docs/responsive.png)
+
+#### You can tweet!
+![Welcome](https://raw.githubusercontent.com/jomicm/tweeter/master/docs/tweets.png)
+
+#### There is also a desktop version!
+![Welcome](https://raw.githubusercontent.com/jomicm/tweeter/master/docs/desktop.png)
+
 ## Getting Started
 
 1. Fork/Clone this repository.
@@ -27,9 +41,10 @@ This repository use the following techonologies HTML, CSS, JS, jQuery and AJAX, 
 - Express
 - SASS
 - Node 5.10.x or above
-
-## Examples
-
+- Body Parser
+- Chance
+- MD5
+- Moment
 
 ## Authors
 
