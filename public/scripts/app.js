@@ -11,6 +11,8 @@ $(document).ready(function() {
   const error = $('#error');
   const closeErrorButton = $('#close-error-button');
   const errorMessage = $('#error-message');
+  const newTweetSection = $('.new-tweet');
+  const arrowIcon = $('#arrow-toggle');
 
   // Appends all tweets to parten element
   const renderTweets = tweets => {
@@ -26,19 +28,9 @@ $(document).ready(function() {
   // Overrides form submit method to prevent reloading the page
   newTweetForm.submit(e => {
     e.preventDefault();
-    console.log('e', e.currentTarget);
-    const tmpdata  = $(e.currentTarget).serializeArray();
-    console.log('tmpdata', tmpdata);
-    console.log('tmpdata', tmpdata.deserialize());
-
-    return;
-    // Validates a correct tweet
     if (!validateNewTweet()) return;
     error.fadeOut();
     const data  = $(e.currentTarget).serialize();
-
-    data.split('=')
-
     const actionURL = e.currentTarget.action;
     pushTweets(actionURL, data);
   });
@@ -67,22 +59,21 @@ $(document).ready(function() {
   // Toggle buttons to navigate to new tweet input
   toggleMenuButton.on('click', e => {
     if (!toggleNewTweet) {
-      // $('html,body').animate({scrollTop: $('#compose-tweet').offset().top},'slow');
-      $('html,body').animate({scrollTop: 400},'slow');
-      $('#arrow-toggle').addClass('rotated');
+      newTweetSection.slideUp('slow', 'linear');
+      arrowIcon.addClass('rotated');
     } else {
-      $('html,body').animate({scrollTop: $('html').offset().top},'slow');
-      $('#arrow-toggle').removeClass('rotated');
+      newTweetSection.slideDown('slow', 'linear');
+      arrowIcon.removeClass('rotated');
     }
     toggleNewTweet = !toggleNewTweet;
     e.preventDefault();
-    $("#txtIn").focus();
+    tweetInput.focus();
   });
   goToSkyButton.on('click', e => {
-    //$('html,body').animate({scrollTop: $('html').offset().top},'slow');
-    $('html,body').animate({scrollTop: $('#compose-tweet').offset().top}, 'slow');
     e.preventDefault();
-    $("#txtIn").focus();
+    $('html').animate({scrollTop: $('html').offset().top},'slow');
+    setTimeout(() => $('.new-tweet').slideDown('slow', 'linear'), 1000);
+    tweetInput.focus();
   });
 
   // Display Go To Sky button
@@ -110,7 +101,7 @@ $(document).ready(function() {
   // Validators
   const validateNewTweet = () => {
     let validationError = '';
-    if (!tweetInput.val().length) {
+    if (!tweetInput.val().trim().length) {
       validationError = 'Tweets cannot be empty!';
     } else if (tweetInput.val().length > 140) {
       validationError = 'Only 140 max length tweets allowed!';
@@ -167,9 +158,11 @@ const createTweetElement = tweet => {
                       <div class="line"></div>
                       <footer>
                         <small>${elapsed}</small>
-                        <div class="right-align">
-                          🇲🇽♼❤️
-                        </div>
+                          <div class="right-align">
+                            <i class="icons icon-flag fa fa-flag"></i>
+                            <i class="icons icon-retweet fa fa-retweet"></i>
+                            <i class="icons icon-heart fa fa-heart"></i>
+                          </div>
                       </footer>
                     </article>`;
   return resTweet;

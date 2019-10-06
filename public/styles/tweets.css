@@ -16,6 +16,7 @@ article.tweet {
   display:flex; 
   flex-direction:row; 
   align-items:center;
+  padding-top: 5px;
   padding-left: 10px;
 }
 
@@ -44,6 +45,29 @@ article.tweet {
 .handle {
   display: none;
 }
+
 .tweet:hover .handle {
   display: inline;
+}
+
+.icons {
+  padding: 5px;
+}
+
+.icons:hover {
+  height: 20px;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.icon-heart:hover {
+  color: red;
+}
+
+.icon-retweet:hover {
+  color: rgb(34, 34, 52);
+}
+
+.icon-flag:hover {
+  color: rgb(167, 167, 27);
 }

@@ -30,6 +30,9 @@
   font-size: 18pt;
   float: left;
   margin-left: 10px;
+  border: 0;
+  box-shadow: none;
+  border-radius: 5px;
 }
 
 .button-new-tweet:hover {
