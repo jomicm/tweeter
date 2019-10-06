@@ -1,5 +1,6 @@
+// Module for handeling error elements
 @import '../partials/colors';
-
+// Error box
 #error {
   display: none;
   padding: 20px;
@@ -10,7 +11,6 @@
   border-radius: 15px;
   box-shadow: $box-shadow;
 }
-
 #close-error-button {
   margin-left: 15px;
   color: $contrast-color;
@@ -21,11 +21,9 @@
   transition: 0.3s;
   cursor: pointer;
 }
-
 .close-error-button:hover {
   color: $anticontrast-color;
 }
-
 #error-message {
   padding-left: 10px;
 }

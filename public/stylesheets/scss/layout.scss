@@ -1,51 +1,60 @@
+// Main layout for website
 @import './partials/colors';
 @import './partials/font';
-@import './modules/misc.scss';
-
+@import './modules/misc';
+@import './partials/assets';
+// General body
 html {
   box-sizing: border-box;
   body {
     display: flex;
     flex-flow: row wrap;
     color: $primary-color;
-    background-color: $primary-background-color;
     font-size: $primary-font-size;
     font-family: $primary-font;
+    background: $body-background;
   }
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
+// General container for header and tweets
 .container {
   width: 90%;
   text-align: center;
   margin: 0 auto;
 }
+// Tweets container
 #tweets-container {
   margin-top: 100px;
 }
+// General line as separator
 .line {
   @extend %line-shared;
 }
+// Query media for responsive design
 @media only screen and (min-width: 768px) {
   nav {
-    background-color: $navbar-color;
+    background: $navbar-gradient;
     height: 120px;
+    box-shadow: $box-shadow;
   }
   nav.fixed-top {
     position: fixed;
   }
   header.main-header {
-    margin-top: 120px;
-    width: 45%;
+    margin-top: 150px;
+    width: 35%;
+    margin-left: 50px;
     padding: 20px;
+    border-radius: 100px;
   }
   header.main-header img {
     padding-top: 40px;
   }
   .container {
     padding-top: 130px;
-    width: 49%;
+    width: 50%;
   }
   .logo {
     font-size: 40pt;

@@ -1,9 +1,10 @@
+// Module for handeling the header
 @import '../partials/colors';
 @import '../partials/font';
 @import '../partials/assets';
 @import '../modules/misc.scss';
 @import '../partials/keyframes';
-
+// Header box
 .main-header {
   margin-top:0px;
   padding-top: 0; 
@@ -13,6 +14,7 @@
   background-image: $header-image;
   box-shadow: $box-shadow;
 }
+// Profile picture
 .image {
   padding-top: 100px;
   width: 250px;

@@ -1,6 +1,8 @@
+// Module for handeling new tweet section
 @import '../partials/colors';
 @import '../partials/font';
-
+@import '../partials/keyframes';
+// New tweet box
 .new-tweet {
   width: 100%;
   margin: 0 auto;
@@ -29,6 +31,7 @@
   float: right;
   margin-right: 10px;
 }
+// Submit new tweet button
 .button-new-tweet {
   color: $contrast-color;
   background-color: $navbar-color;  
@@ -40,7 +43,9 @@
   position: relative;
   z-index: 0;
   border-radius: 10px;
+  border: none;
 }
+// Submit new tweet glowing styling
 .button-new-tweet:before {
   content: '';
   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
@@ -78,9 +83,3 @@
   border-radius: 10px;
 }
 .button-new-tweet:focus {outline:0;}
-
-@keyframes glowing {
-  0% { background-position: 0 0; }
-  50% { background-position: 500% 0; }
-  100% { background-position: 0 0; }
-}
