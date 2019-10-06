@@ -12,8 +12,6 @@ $(document).ready(function() {
   const closeErrorButton = $('#close-error-button');
   const errorMessage = $('#error-message');
   const newTweetSection = $('.new-tweet');
-  const arrowIcon = $('#arrow-toggle');
-
   // Appends all tweets to parten element
   const renderTweets = tweets => {
     // Reset all input elements so it is ready for a new tweet
@@ -56,23 +54,37 @@ $(document).ready(function() {
     }
   };
 
+  let isOpen = false;
   // Toggle buttons to navigate to new tweet input
   toggleMenuButton.on('click', e => {
     if (!toggleNewTweet) {
       newTweetSection.slideUp('slow', 'linear');
-      arrowIcon.addClass('rotated');
-    } else {
+      tweetContainer.css('margin-top','30px');
+      isOpen = false;
+    } else if (!isOpen) {
+      tweetContainer.css('margin-top','100px');
       newTweetSection.slideDown('slow', 'linear');
-      arrowIcon.removeClass('rotated');
+      $('html').animate({scrollTop: $('.new-tweet').offset().top},'slow');
+      tweetInput.focus();
+      isOpen = true;
     }
     toggleNewTweet = !toggleNewTweet;
-    e.preventDefault();
-    tweetInput.focus();
+    
   });
   goToSkyButton.on('click', e => {
-    e.preventDefault();
     $('html').animate({scrollTop: $('html').offset().top},'slow');
-    setTimeout(() => $('.new-tweet').slideDown('slow', 'linear'), 1000);
+    setTimeout(() => {
+      // $('.new-tweet').slideDown('slow', 'linear');
+      // tweetContainer.css('margin-top','100px');
+      if (!isOpen) {
+        tweetContainer.css('margin-top','100px');
+        newTweetSection.slideDown('slow', 'linear');
+        isOpen = true;
+        tweetInput.focus();
+        toggleNewTweet = !toggleNewTweet;
+      }
+      $('html').animate({scrollTop: $('.new-tweet').offset().top},'slow');
+    }, 1000);
     tweetInput.focus();
   });
 

@@ -4,6 +4,7 @@
 <head>
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
   <!-- External CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
@@ -20,8 +21,10 @@
 
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+  <script src="https://kit.fontawesome.com/d1a817b2bd.js" crossorigin="anonymous"></script>
+
   <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/app.js"></script>
@@ -34,13 +37,17 @@
   <nav class="fixed-top">
     <span class="logo">Tweeter</span>
     <div class="toggle-menu-button">
-      <a class="no-link" data-toggle="false" href=""><span class="add-new-tweet"><strong>New&nbsp</strong>Tweet<img id="arrow-toggle" class="avatar" src="./images/down-arrow.gif"/></span></a>
+      <span class="no-link">
+        <strong>New&nbsp</strong>
+        <span>Tweet</span>
+        <i id="new-tweet-icon" class="fas fa-angle-double-down"></i>
+      </span>
     </div>
   </nav>
   <!-- Header to show user info -->
   <header class="main-header">
     <div class="center">
-      <img class="image" src="/images/profile-hex.png">
+      <img class="image" src="/images/profile.jpg">
     </div>
     <!-- <br id="compose-tweet"/> -->
     <div class="center">
@@ -51,7 +58,6 @@
   <main class="container">
     <!-- Error Section -->
     <div id="error">
-        <!-- <span id="close-error-button" onclick="this.parentElement.style.display='none';">&times;</span> -->
         <span id="close-error-button">&times;</span>
         <i class="fa fa-bomb"></i>
         <span><strong>Error:</strong><span id="error-message">is the error message.</span></span>

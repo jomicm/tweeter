@@ -22,7 +22,7 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: Source Sans Pro;
+  font-family: Source Sans Pro, sans-serif;
   /* overflow: auto; */
 }
 
@@ -55,11 +55,13 @@ body {
   }
   nav {
     background-color: #4056A1;
+    height: 120px;
+  }
+  nav.fixed-top {
+    position: fixed;
   }
   header.main-header {
-    /* width: 100%; */
     margin-top: 120px;
-    /* background-color: #21f500; */
     width: 45%;
     padding: 20px;
   }
@@ -69,5 +71,8 @@ body {
   .container {
     padding-top: 130px;
     width: 49%;
+  }
+  .logo {
+    font-size: 40pt;
   }
 }

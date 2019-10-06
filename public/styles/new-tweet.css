@@ -13,6 +13,7 @@
   padding-left: 10px;
   outline: none;
   resize: none;
+  font-size: 16pt;
 }
 
 .input-tweet::-webkit-input-placeholder {

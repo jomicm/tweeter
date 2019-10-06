@@ -1,12 +1,14 @@
 nav {
   /* background-color: #4056A1; */
-  height: 120px;
+  height: 80px;
+  /* height: 120px; */
   color: transparent;
-  padding: 1.5em;
+  padding: 1em;
+  /* padding: 1.5em; */
 }
 
 .fixed-top {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   left: 0;
@@ -18,14 +20,14 @@ nav {
 .logo {
   font-family: Bungee;
   color: white;
-  font-size: 40pt;
+  font-size: 20pt;
 }
 
 .toggle-menu-button {
   display: flex; 
   flex-direction:column; 
   margin-left: auto; 
-  text-align: center
+  text-align: center;
 }
 
 .add-new-tweet {
@@ -34,16 +36,32 @@ nav {
 }
 
 .no-link {
-  text-decoration: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   color:white;
 }
 
+.no-link:hover {
+  cursor: pointer;
+}
+
+#new-tweet-icon {
+  padding-left: 10px;
+  animation: bounce 2.0s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+  40% {transform: translateY(-10px);} 
+  60% {transform: translateY(-5px);} 
+} 
+
+
 .rotated {
   transform: rotate(180deg);
-  -ms-transform: rotate(180deg); /* IE 9 */
-  -moz-transform: rotate(180deg); /* Firefox */
-  -webkit-transform: rotate(180deg); /* Safari and Chrome */
-  -o-transform: rotate(180deg); /* Opera */
 }
 
 #go-to-sky {
