@@ -62,9 +62,11 @@ $(document).ready(function() {
       tweetContainer.css('margin-top','30px');
       isOpen = false;
     } else if (!isOpen) {
-      tweetContainer.css('margin-top','100px');
       newTweetSection.slideDown('slow', 'linear');
-      $('html').animate({scrollTop: $('.new-tweet').offset().top},'slow');
+      tweetContainer.css('margin-top','100px');
+      if ($(window).width() < 768) {
+        $('html').animate({scrollTop: $('.new-tweet').offset().top},'slow');
+      }
       tweetInput.focus();
       isOpen = true;
     }
@@ -77,14 +79,17 @@ $(document).ready(function() {
       // $('.new-tweet').slideDown('slow', 'linear');
       // tweetContainer.css('margin-top','100px');
       if (!isOpen) {
-        tweetContainer.css('margin-top','100px');
         newTweetSection.slideDown('slow', 'linear');
-        isOpen = true;
+        tweetContainer.css('margin-top','100px');
         tweetInput.focus();
         toggleNewTweet = !toggleNewTweet;
+        isOpen = true;
       }
-      $('html').animate({scrollTop: $('.new-tweet').offset().top},'slow');
-    }, 1000);
+      if ($(window).width() < 768) {
+        $('html').animate({scrollTop: $('.new-tweet').offset().top},'slow');
+      }
+      //$('html').animate({scrollTop: $('.new-tweet').offset().top},'slow');
+    }, 500);
     tweetInput.focus();
   });
 
