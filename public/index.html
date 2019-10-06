@@ -5,6 +5,7 @@
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <link rel="shortcut icon" href="/icon/tweeter.png">
 
   <!-- External CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
@@ -12,18 +13,11 @@
     rel="stylesheet">
 
   <!-- App CSS -->
-  <!-- <link rel="stylesheet" href="/styles/nav.css" type="text/css" /> -->
   <link rel="stylesheet" href="/stylesheets/css/modules/nav.css" type="text/css" />
-  <!-- <link rel="stylesheet" href="/styles/header.css" type="text/css" /> -->
   <link rel="stylesheet" href="/stylesheets/css/modules/header.css" type="text/css" />
-  <!-- <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" /> -->
   <link rel="stylesheet" href="/stylesheets/css/modules/new-tweet.css" type="text/css" />
-  <!-- <link rel="stylesheet" href="/styles/tweets.css" type="text/css" /> -->
   <link rel="stylesheet" href="/stylesheets/css/modules/tweets.css" type="text/css" />
-  <!-- <link rel="stylesheet" href="/styles/errors.css" type="text/css" /> -->
   <link rel="stylesheet" href="/stylesheets/css/modules/errors.css" type="text/css" />
-
-  <!-- <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> -->
   <link rel="stylesheet" href="/stylesheets/css/layout.css" type="text/css" />
 
   <!-- External JS -->
@@ -54,7 +48,6 @@
     <div class="center">
       <img class="image" src="/images/profile.jpg">
     </div>
-    <!-- <br id="compose-tweet"/> -->
     <div class="center">
       <h2 class="white-text"><strong>Miguel </strong>Cruz</h2>
     </div>
@@ -73,36 +66,16 @@
       <form id="post-new-tweet" action="/tweets" method="POST">
         <textarea id="input-new-tweet" class="input-tweet" name="text" placeholder="What are you humming about?" fixed></textarea>
         <footer>
-          <!-- <input class="button-new-tweet bungee" type="submit" value="Tweet"> -->
-          <!-- <input class="glow-on-hover" type="submit" value="Tweet"> -->
-          <button class="glow-on-hover button-new-tweet bungee" type="submit"><i class="fab fa-twitter"></i> Tweet!</button>
+          <button class="input-new-tweet bungee" type="submit">
+            <i class="fab fa-twitter"></i> 
+            Tweet!
+          </button>
           <span class="counter label-counter bungee">140</span>
         </footer>
       </form>
     </section>
     <!-- Tweet Containers -->
     <section id="tweets-container">
-      <article class="tweet">
-        <!-- <header>
-          <div class="tweet-identity">
-            <img class="avatar" src="https://www.pngkey.com/png/detail/350-3507755_this-free-icons-png-design-of-sir-isaac.png"/>
-            <span>Name</span>
-          </div>
-          <span class="right-align handle">@SirIsaac</span>
-        </header>
-        <div class="tweet-content">
-          <span>You're so beautiful that you made me forget my pickup line.</span>
-        </div>
-        <div class="line"></div>
-        <footer>
-          <small>10 days ago</small>
-          <div class="right-align">
-            <i class="icons icon-flag fa fa-flag"></i>
-            <i class="icons icon-retweet fa fa-retweet"></i>
-            <i class="icons icon-heart fa fa-heart"></i>
-          </div>
-        </footer>
-      </article> -->
     </section>
     <!-- Go to sky button -->
     <a id="go-to-sky"></a>

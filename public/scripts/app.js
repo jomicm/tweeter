@@ -77,8 +77,6 @@ $(document).ready(function() {
   goToSkyButton.on('click', e => {
     $('html').animate({scrollTop: $('html').offset().top},'slow');
     setTimeout(() => {
-      // $('.new-tweet').slideDown('slow', 'linear');
-      // tweetContainer.css('margin-top','100px');
       if (!isOpen) {
         newTweetSection.slideDown('slow', 'linear');
         tweetContainer.css('margin-top','100px');
@@ -89,7 +87,6 @@ $(document).ready(function() {
       if ($(window).width() < 768) {
         $('html').animate({scrollTop: $('.new-tweet').offset().top},'slow');
       }
-      //$('html').animate({scrollTop: $('.new-tweet').offset().top},'slow');
     }, 500);
     tweetInput.focus();
   });
@@ -134,7 +131,6 @@ $(document).ready(function() {
 
 // Global Variables
 let toggleNewTweet = false;
-
 // Helper infile functions
 const getElapsedTime = date => {
   const now = new Date();
