@@ -21,6 +21,7 @@ $(document).ready(function() {
     // Appends all elements at once so it's more efficient
     const tweetElements = tweets.map(tweet => createTweetElement(tweet));
     tweetContainer.append(tweetElements.join(''));
+    iconsToggle();
   };
 
   // Overrides form submit method to prevent reloading the page
@@ -54,8 +55,8 @@ $(document).ready(function() {
     }
   };
 
-  let isOpen = false;
   // Toggle buttons to navigate to new tweet input
+  let isOpen = false;
   toggleMenuButton.on('click', e => {
     if (!toggleNewTweet) {
       newTweetSection.slideUp('slow', 'linear');
@@ -176,16 +177,36 @@ const createTweetElement = tweet => {
                       <footer>
                         <small>${elapsed}</small>
                           <div class="right-align">
-                            <i class="icons icon-flag fa fa-flag"></i>
-                            <i class="icons icon-retweet fa fa-retweet"></i>
-                            <i class="icons icon-heart fa fa-heart"></i>
+                            <i data-icon="flag" data-selected="false" class="icons icon-flag fa fa-flag"></i>
+                            <i data-icon="retweet" data-selected="false" class="icons icon-retweet fa fa-retweet"></i>
+                            <i data-icon="heart" data-selected="false" class="icons icon-heart fa fa-heart"></i>
                           </div>
                       </footer>
                     </article>`;
   return resTweet;
 };
-const escape =  function(str) {
+const escape =  str => {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
+};
+const iconsToggle =  () => {
+  const icons = $('.icons');
+  icons.on('click', e => {
+    const icon = $(e.target);
+    const type = icon.data();
+    if (type.icon === 'heart' && !type.selected) {
+      icon.css('color', 'red');
+      icon.data('selected', true);
+    } else if (type.icon === 'retweet' && !type.selected) {
+      icon.css('color', 'blue');
+      icon.data('selected', true);
+    } else if (type.icon === 'flag' && !type.selected) {
+      icon.css('color', 'orange');
+      icon.data('selected', true);
+    } else if (type.selected) {
+      icon.data('selected', false);
+      icon.css('color', 'gray');
+    }
+  });
 };

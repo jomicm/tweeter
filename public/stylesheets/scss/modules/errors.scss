@@ -1,0 +1,31 @@
+@import '../partials/colors';
+
+#error {
+  display: none;
+  padding: 20px;
+  background-color: $error-color;
+  color: $contrast-color;
+  margin-bottom: 15px;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: $box-shadow;
+}
+
+#close-error-button {
+  margin-left: 15px;
+  color: $contrast-color;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close-error-button:hover {
+  color: $anticontrast-color;
+}
+
+#error-message {
+  padding-left: 10px;
+}

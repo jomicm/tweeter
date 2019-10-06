@@ -6,8 +6,7 @@ html {
   box-sizing: border-box;
   body {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     color: $primary-color;
     background-color: $primary-background-color;
     font-size: $primary-font-size;
@@ -18,7 +17,6 @@ html {
   box-sizing: inherit;
 }
 .container {
-  display: flexbox;
   width: 90%;
   text-align: center;
   margin: 0 auto;

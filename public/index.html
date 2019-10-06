@@ -16,18 +16,20 @@
   <link rel="stylesheet" href="/stylesheets/css/modules/nav.css" type="text/css" />
   <!-- <link rel="stylesheet" href="/styles/header.css" type="text/css" /> -->
   <link rel="stylesheet" href="/stylesheets/css/modules/header.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/errors.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" /> -->
+  <link rel="stylesheet" href="/stylesheets/css/modules/new-tweet.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="/styles/tweets.css" type="text/css" /> -->
+  <link rel="stylesheet" href="/stylesheets/css/modules/tweets.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="/styles/errors.css" type="text/css" /> -->
+  <link rel="stylesheet" href="/stylesheets/css/modules/errors.css" type="text/css" />
+
   <!-- <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> -->
   <link rel="stylesheet" href="/stylesheets/css/layout.css" type="text/css" />
 
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-  <script src="https://kit.fontawesome.com/d1a817b2bd.js" crossorigin="anonymous"></script>
-
   <!-- Font Awesome CDN -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <script src="https://kit.fontawesome.com/d1a817b2bd.js" crossorigin="anonymous"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/app.js"></script>
@@ -71,7 +73,9 @@
       <form id="post-new-tweet" action="/tweets" method="POST">
         <textarea id="input-new-tweet" class="input-tweet" name="text" placeholder="What are you humming about?" fixed></textarea>
         <footer>
-          <input class="button-new-tweet bungee" type="submit" value="Tweet">
+          <!-- <input class="button-new-tweet bungee" type="submit" value="Tweet"> -->
+          <!-- <input class="glow-on-hover" type="submit" value="Tweet"> -->
+          <button class="glow-on-hover button-new-tweet bungee" type="submit"><i class="fab fa-twitter"></i> Tweet!</button>
           <span class="counter label-counter bungee">140</span>
         </footer>
       </form>
