@@ -1,0 +1,104 @@
+@charset "UTF-8";
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+.fixed-top {
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+nav {
+  height: 80px;
+  color: transparent;
+  padding: 1em;
+}
+
+.fixed-top {
+  position: absolute;
+  z-index: 1030;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-family: Bungee;
+  color: white;
+  font-size: 20pt;
+}
+
+.toggle-menu-button {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  text-align: center;
+}
+
+.add-new-tweet {
+  display: flex;
+  align-items: center;
+}
+
+.no-link {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: white;
+}
+
+.no-link:hover {
+  cursor: pointer;
+}
+
+#new-tweet-icon {
+  padding-left: 10px;
+  animation: bounce 2s;
+  animation-iteration-count: infinite;
+}
+
+#go-to-sky {
+  display: none;
+  background-color: red;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 40px;
+  margin: 30px;
+  position: fixed;
+  bottom: 15px;
+  right: 10px;
+  transition: background-color 0.3s;
+  z-index: 1000;
+  opacity: 0.5;
+}
+
+#go-to-sky:hover {
+  cursor: pointer;
+  background-color: #b1342b;
+  opacity: 0.7;
+}
+
+#go-to-sky:active {
+  background-color: #555;
+}
+
+#go-to-sky::after {
+  content: "";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22pt;
+  line-height: 50px;
+  color: white;
+}
+
+/*# sourceMappingURL=nav.css.map */

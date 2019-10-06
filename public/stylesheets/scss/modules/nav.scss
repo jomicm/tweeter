@@ -1,0 +1,79 @@
+@import '../partials/colors';
+@import '../partials/font';
+@import '../partials/keyframes';
+@import '../modules/misc.scss';
+
+nav {
+  height: 80px;
+  color: $no-color;
+  padding: 1em;
+}
+.fixed-top {
+  @extend %no-margin;
+  position: absolute;
+  z-index: 1030;
+  display: flex;
+  align-items: center;
+}
+.logo {
+  font-family: $theme-font;
+  color: $contrast-color;
+  font-size: $medium-size-font;
+}
+.toggle-menu-button {
+  display: flex; 
+  flex-direction:column; 
+  margin-left: auto; 
+  text-align: center;
+}
+.add-new-tweet {
+  display: flex; 
+  align-items:center;
+}
+.no-link {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: $contrast-color;
+}
+.no-link:hover {
+  cursor: pointer;
+}
+#new-tweet-icon {
+  padding-left: 10px;
+  animation: bounce 2.0s;
+  animation-iteration-count: infinite;
+}
+#go-to-sky {
+  display: none;
+  background-color: $accent-color-primary;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 40px;
+  margin: 30px;
+  position: fixed;
+  bottom: 15px;
+  right: 10px;
+  transition: background-color .3s;
+  z-index: 1000;
+  opacity: 0.5;
+}
+#go-to-sky:hover {
+  cursor: pointer;
+  background-color: $accent-color-secondary;
+  opacity: 0.7;
+}
+#go-to-sky:active {
+  background-color: $shadow-color;
+}
+#go-to-sky::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22pt;
+  line-height: 50px;
+  color: $contrast-color;
+}

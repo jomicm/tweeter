@@ -11,8 +11,6 @@ $(document).ready(function() {
     if (newCount < 0) {
       counter.css('color', 'red');
       const noSound = new Audio("http://soundbible.com/mp3/Computer%20Error%20Alert-SoundBible.com-783113881.mp3");
-      //const noSound = new Audio("http://soundbible.com/mp3/Pew_Pew-DKnight556-1379997159.mp3");
-      // const noSound = new Audio("http://soundbible.com/mp3/PINGAS-Richard-89282878.mp3");
       noSound.play();
     } else counter.css({color:'black'});
   });

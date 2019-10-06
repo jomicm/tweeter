@@ -22,11 +22,15 @@ article.tweet {
 
 /* .tweet header span  */
 .right-align {
-  margin-left: auto; padding-right: 10px;
+  margin-left: auto; 
+  padding-right: 10px;
 }
 
 .tweet .tweet-content {
-  text-align: left; padding: 30px; font-weight: bold;
+  text-align: left; 
+  padding: 30px; 
+  font-weight: bold;
+  overflow-wrap: break-word;
 }
 
 .tweet-identity {

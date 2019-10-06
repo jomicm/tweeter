@@ -1,0 +1,55 @@
+@import './partials/colors';
+@import './partials/font';
+@import './modules/misc.scss';
+
+html {
+  box-sizing: border-box;
+  body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: $primary-color;
+    background-color: $primary-background-color;
+    font-size: $primary-font-size;
+    font-family: $primary-font;
+  }
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.container {
+  display: flexbox;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+}
+#tweets-container {
+  margin-top: 100px;
+}
+.line {
+  @extend %line-shared;
+}
+@media only screen and (min-width: 768px) {
+  nav {
+    background-color: $navbar-color;
+    height: 120px;
+  }
+  nav.fixed-top {
+    position: fixed;
+  }
+  header.main-header {
+    margin-top: 120px;
+    width: 45%;
+    padding: 20px;
+  }
+  header.main-header img {
+    padding-top: 40px;
+  }
+  .container {
+    padding-top: 130px;
+    width: 49%;
+  }
+  .logo {
+    font-size: 40pt;
+  }
+}
